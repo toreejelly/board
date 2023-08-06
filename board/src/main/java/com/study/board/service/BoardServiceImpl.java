@@ -12,16 +12,18 @@ import com.study.board.vo.BoardVO;
 public class BoardServiceImpl implements BoardService {
 
 	@Autowired
-	private BoardMapper mapper;
 	
+	private BoardMapper mapper;	
+	
+	//목록조회
 	@Override
+//	메서드(함수) 선언에만 달 수 있으며, 
+//	상위 타입(부모 타입)의 메서드를 재정의했음을 의미한다.
+	 	
 	public List<BoardVO> getList(){
-		
+//5 접근제어자 자바유틸<리턴값> 함수이름(매개변수.파라미터) 		
+ 	
 		return mapper.getList();
 		
 	}
-
-
-
-
 }

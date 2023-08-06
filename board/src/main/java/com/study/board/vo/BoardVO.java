@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class BoardVO {
-	
+//10	
 		private int boardId;
 		private String title;
 		private String text;
