@@ -59,7 +59,13 @@ public class BoardController {
 	}
 	
 
-
+	//글쓰기 페이지
+	@GetMapping("/contentWriteForm")
+	public String contentWriteForm() {
+		log.info("BoardController contentWriteForm()");
+		
+		return "contentWriteForm";
+	}
 
 }
 
