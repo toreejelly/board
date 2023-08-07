@@ -23,7 +23,13 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardVO> getList(){
 //5 접근제어자 자바유틸<리턴값> 함수이름(매개변수.파라미터) 		
  	
-		return mapper.getList();
-		
+		return mapper.getList();		
+	}
+	
+	
+	//글 조회
+	@Override
+	public BoardVO getContent(int boardId) {
+		return mapper.getContent(boardId);
 	}
 }

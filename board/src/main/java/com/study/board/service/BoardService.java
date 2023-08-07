@@ -14,7 +14,8 @@ public interface BoardService {
 //			리턴값 없을 경우 void 
 	
 	//글 조회
-	//public BoardVO getContent(int boardId);
+//							형을 꼭 적어줘야하는가?	
+	public BoardVO getContent(int boardId);
 
 	//글쓰기
 	//public void contentWrite(BoardVO boardVO);

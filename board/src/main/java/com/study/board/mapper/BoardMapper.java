@@ -14,4 +14,6 @@ public interface BoardMapper {
 	public List<BoardVO> getList(); 
 //6        자바유틸<리턴값>  함수이름(매개변수.파라미터)	
 	
+	//글 조회
+	public BoardVO getContent(int boardId);
 }

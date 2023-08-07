@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.study.board.service.BoardService;
-
+import com.study.board.vo.BoardVO;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -41,6 +41,23 @@ public class BoardController {
 		
 		return "list";
     }
+	
+	//글 조회	
+	@GetMapping("/board/{boardId}")
+	public String contentViewForm(Model model, BoardVO boardVO) {
+		log.info("BoardController contentViewForm() boardVO");
+		log.info("boardVO : " + boardVO);
+
+//							BoardVO안에는 boardId인데 왜 BoardId이지?		
+		int boardId = boardVO.getBoardId();
+		log.info("boardId : " + boardId);
+		
+//							이 content는 어디서 사용하는거지?		
+		model.addAttribute("content", boardService.getContent(boardId));
+		
+		return "contentViewForm";		
+	}
+	
 
 
 
