@@ -32,4 +32,17 @@ public class BoardServiceImpl implements BoardService {
 	public BoardVO getContent(int boardId) {
 		return mapper.getContent(boardId);
 	}
+	
+	//글쓰기
+	@Override
+	public void contentWrite(BoardVO boardVO) {
+		mapper.contentWrite(boardVO);
+	}
+	
+	//최신 글번호
+	@Override
+	public int boardId() {
+		return mapper.boardId();
+	}
+	
 }

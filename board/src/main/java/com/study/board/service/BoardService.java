@@ -18,10 +18,10 @@ public interface BoardService {
 	public BoardVO getContent(int boardId);
 
 	//글쓰기
-	//public void contentWrite(BoardVO boardVO);
+	public void contentWrite(BoardVO boardVO);
 
 	//최신 글번호
-	//public int boardId();
+	public int boardId();
 
 	//글 수정
 	//public void contentModify(BoardVO boardVO);

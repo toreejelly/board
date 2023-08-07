@@ -13,24 +13,34 @@
 <script>
    
 	//작성
+	//22
 	function contentWrite() {
-		
+		//# : id / . : class
+		//let, var, const
+		//let 변수명
+		//. val()은 양식(form)의 값을 가져오거나 값을 설정하는 메서드
 		let memberId = $("#memberId").val();
 		let title = $("#title").val();
-		let text = $("#text").val();
+		let text = $("#text").val();					
 		
+		//  *
 		let data = {
-			  memberId  : memberId
+		//내가정한이름 :
+			memberId    : memberId
 			, title		: title
 			, text		: text
 		};
+
+		//개발자 모드에서 확인을 위해 필요
+		//						*
+		console.log("data : ", data);
 		
-		console.log("data", data);
 		
 		$.ajax({
 			type : "POST"
 			,url : "/contentWrite"
 			,cache : false
+			//						*
 			,data : JSON.stringify(data)
 			,contentType : 'application/json; charset=utf-8'
 			,success : function(result){
@@ -77,7 +87,7 @@
 			<tr>
 				<td colspan="2">
 					<button type="button" class="btn btn-success" onclick="location.href='/list'">목록보기</button> &nbsp;&nbsp; 
-					<button type="button" class="btn btn-warning" onclick="contentWrite()">작성</button>
+					<button type="button" class="btn btn-warning" onclick="contentWrite()">작성</button><!--11 --><!-- &nbsp : space -->
 				</td>
 			</tr>
 		</table>

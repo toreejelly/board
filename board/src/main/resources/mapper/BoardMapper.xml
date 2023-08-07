@@ -39,5 +39,36 @@
 			WHERE BOARD_ID = #{boardId} 
 		 
 	</select> 
+	
+	<!-- 글 쓰기 -->
+	<insert id="contentWrite" parameterType="com.study.board.vo.BoardVO"> 
+		/* com.study.board.mapper.BoardMapper.contentWrite */
+			INSERT INTO BOARD
+				(
+				  BOARD_ID
+				, TITLE
+				, TEXT
+				, BOARD_DATE
+				, MEMBER_ID
+				)
+			VALUES
+				(
+				  (SELECT NVL(MAX(BOARD_ID)+1, 0) FROM BOARD)
+				, #{title}
+				, #{text}
+				, SYSDATE
+				, #{memberId}
+				)
+	</insert>
+	
+	
+	<!-- 최신 글번호 -->
+	<select id="boardId" resultType="int"> 
+		/* com.study.board.mapper.BoardMapper.boardId */
+		SELECT 
+			MAX(BOARD_ID) 
+		FROM BOARD
+	</select> 
+	
 
 </mapper>	

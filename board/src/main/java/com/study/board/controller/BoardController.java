@@ -1,9 +1,13 @@
 package com.study.board.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.study.board.service.BoardService;
 import com.study.board.vo.BoardVO;
@@ -48,7 +52,7 @@ public class BoardController {
 		log.info("BoardController contentViewForm() boardVO");
 		log.info("boardVO : " + boardVO);
 
-//							BoardVO안에는 boardId인데 왜 BoardId이지?		
+//							BoardVO안에는 boardId인데 왜 BoardId이지? getter setter 만들어질 때는 자동으로 앞이 대문자가 된다.		
 		int boardId = boardVO.getBoardId();
 		log.info("boardId : " + boardId);
 		
@@ -66,6 +70,34 @@ public class BoardController {
 		
 		return "contentWriteForm";
 	}
+	
+    //글쓰기
+    @PostMapping("/contentWrite")											 
+    public ResponseEntity<String> contentWrite(@RequestBody BoardVO boardVO) {
+    //											바디가 이거라고 알려주는 주석같은 것									
+    	
+    	log.info("BoardController contentWrite()");
+    	log.info("boardVO : " + boardVO);
+
+		ResponseEntity<String> entity = null;
+
+		try {
+			boardService.contentWrite(boardVO);		//글쓰기
+			int boardId = boardService.boardId();	//최신 글번호
+			String strBoardId = Integer.toString(boardId);
+			log.info("boardId : " + boardId);
+			
+			entity = new ResponseEntity<String>(strBoardId, HttpStatus.OK);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+         
+		return entity;
+
+    } 
+    
 
 }
 
