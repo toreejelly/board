@@ -19,7 +19,8 @@
 			FROM BOARD  
 			ORDER BY BOARD_DATE DESC
 	</select> 
-	
+
+<!-- 666  -->	
 	<!-- 글 조회 -->
 	<select id="getContent" parameterType="int" resultType="com.study.board.vo.BoardVO"> 
 <!-- paramterType : 전달받은 파라이터 데이터 타입 지정  -->

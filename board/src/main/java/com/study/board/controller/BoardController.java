@@ -47,6 +47,9 @@ public class BoardController {
     }
 	
 	//글 조회	
+	//list.jsp 의
+	//111<a href="/board/${list.boardId}">${list.title}</a> 를 타고 왔음
+//222
 	@GetMapping("/board/{boardId}")
 	public String contentViewForm(Model model, BoardVO boardVO) {
 		log.info("BoardController contentViewForm() boardVO");
@@ -56,9 +59,11 @@ public class BoardController {
 		int boardId = boardVO.getBoardId();
 		log.info("boardId : " + boardId);
 		
-//							이 content는 어디서 사용하는거지?		
+//			이 content는 어디서 사용하는거지? contentViewForm.jsp에서 사용		
 		model.addAttribute("content", boardService.getContent(boardId));
-		
+
+//777		
+		// return값 jsp이름 (contentViewForm.jsp)
 		return "contentViewForm";		
 	}
 	

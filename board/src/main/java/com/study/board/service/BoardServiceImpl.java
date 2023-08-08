@@ -26,7 +26,7 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.getList();		
 	}
 	
-	
+//444	
 	//글 조회
 	@Override
 	public BoardVO getContent(int boardId) {

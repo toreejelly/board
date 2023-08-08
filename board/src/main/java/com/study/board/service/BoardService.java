@@ -12,7 +12,8 @@ public interface BoardService {
 //3	접근제어자 자바유틸<리턴값>	 함수이름(매개변수.파라미터)		
 //	접근제어자 리턴값         함수
 //			리턴값 없을 경우 void 
-	
+
+//333	
 	//글 조회
 //							형을 꼭 적어줘야하는가? 무조건 적어줘야함(제네릭<T> 공부)	
 	public BoardVO getContent(int boardId);
