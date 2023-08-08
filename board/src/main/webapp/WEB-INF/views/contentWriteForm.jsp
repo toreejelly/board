@@ -35,7 +35,7 @@
 		//						*
 		console.log("data : ", data);
 		
-		
+//33		
 		$.ajax({
 			type : "POST"
 			,url : "/contentWrite"
@@ -43,6 +43,8 @@
 			//						*
 			,data : JSON.stringify(data)
 			,contentType : 'application/json; charset=utf-8'
+			//entity = new ResponseEntity<String>(strBoardId, HttpStatus.OK);
+			//result에 strBoardId이 들어온다
 			,success : function(result){
 				//console.log("result", result);
 				alert("작성되었습니다.");

@@ -16,10 +16,12 @@ public interface BoardMapper {
 	
 	//글 조회
 	public BoardVO getContent(int boardId);
-	
+
+//77	
 	//글 작성 
 	public void contentWrite(BoardVO boardVO);
-	
+
+//1212	
 	//최신 글번호
 	public int boardId();
 	

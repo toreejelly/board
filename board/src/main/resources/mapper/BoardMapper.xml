@@ -39,7 +39,8 @@
 			WHERE BOARD_ID = #{boardId} 
 		 
 	</select> 
-	
+
+<!-- 88 -->	
 	<!-- 글 쓰기 -->
 	<insert id="contentWrite" parameterType="com.study.board.vo.BoardVO"> 
 		/* com.study.board.mapper.BoardMapper.contentWrite */
@@ -62,6 +63,7 @@
 	</insert>
 	
 	
+<!-- 1313 -->	
 	<!-- 최신 글번호 -->
 	<select id="boardId" resultType="int"> 
 		/* com.study.board.mapper.BoardMapper.boardId */
@@ -69,6 +71,7 @@
 			MAX(BOARD_ID) 
 		FROM BOARD
 	</select> 
+	
 	
 
 </mapper>	

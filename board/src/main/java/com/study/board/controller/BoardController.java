@@ -71,31 +71,42 @@ public class BoardController {
 		return "contentWriteForm";
 	}
 	
+//44	
     //글쓰기
     @PostMapping("/contentWrite")											 
     public ResponseEntity<String> contentWrite(@RequestBody BoardVO boardVO) {
-    //											바디가 이거라고 알려주는 주석같은 것									
-    	
+    //											바디가 이거라고 알려주는 주석같은 것									    	
     	log.info("BoardController contentWrite()");
     	log.info("boardVO : " + boardVO);
 
+    	//초기화 시킴
 		ResponseEntity<String> entity = null;
-
+		
+		//try catch는 예외 처리를 위해 사용되는 구문입니다.
 		try {
+			//55			
 			boardService.contentWrite(boardVO);		//글쓰기
+			
+			//9999
+			//alert("작성되었습니다.")를 띄운 후 글작성 내용을 띄우기 위해 필요함
 			int boardId = boardService.boardId();	//최신 글번호
 			String strBoardId = Integer.toString(boardId);
 			log.info("boardId : " + boardId);
 			
+			
+			//success : function(result)로 어케 가는거지?HttpStatus.OK면sucess로 간다
+			//strBoardId이 값을 ,success : function(result)의 result가 받는다 
 			entity = new ResponseEntity<String>(strBoardId, HttpStatus.OK);
 			
 		} catch (Exception e) {
+			
+			//예외상황을 분석하기 위해 사용(메소드의 정보와 예외결과를 화면에 출력함)
 			e.printStackTrace();
+			//e.getMessage()값을 ,error : function(e)의 e가 받는다
 			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
          
 		return entity;
-
     } 
     
 
