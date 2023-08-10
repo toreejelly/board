@@ -25,5 +25,9 @@ public interface BoardMapper {
 //1212	
 	//최신 글번호
 	public int boardId();
+
+//삭제7	
+	//글 삭제 
+	public void contentDelete(int boardId);
 	
 }

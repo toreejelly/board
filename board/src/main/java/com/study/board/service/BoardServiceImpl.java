@@ -46,5 +46,11 @@ public class BoardServiceImpl implements BoardService {
 	public int boardId() {
 		return mapper.boardId();
 	}
-	
+
+//삭제6	
+	//글 삭제
+	@Override
+	public void contentDelete(int boardId) {
+		mapper.contentDelete(boardId);
+	}
 }

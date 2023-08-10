@@ -8,61 +8,53 @@
 
 <meta charset="UTF-8">
 
-<title>글</title>
+<title>글 수정</title>
 
 <script type="text/javascript">
    
-//삭제2   
-	//삭제
-	function contentDetele() {
-		//# : id / . : class
-		//let, var, const
-		//let 변수명
-		let boardId = $("#boardId").val();          
-		
-		//	*
+	//수정
+	function contentModify(){
+	   
+		let boardId = $("#boardId").val(); // 게시판 순번
+		let title = $("#title").val(); // 제목
+		let text = $("#text").val(); // 글          
+       
 		var data = {
-				  boardId 	: boardId
+			  boardId 	: boardId
+			, title 	: title
+			, text 		: text
 		};
 		
-		//개발자 모드에서 확인을 위해 필요
-		//						*
-		// console.log("data", data);
+		//console.log("data", data);
 		
 		$.ajax({
-			type : "DELETE"
-			//삭제3
+			type : "PUT"
 			,url : "/board/"+boardId
 			,cache : false
 			,contentType : 'application/json; charset=utf-8'
-			//						*
 			,data : JSON.stringify(data)
-			//entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
-			//result 값에 "SUCCESS"가 들어온다
 			,success : function(result) {
 				if (result == "SUCCESS") {
-					alert("삭제되었습니다.");
-					location.href = "/list";
+					alert("수정되었습니다.");
+					location.href = "/board/"+boardId;
 				}
 			}
-			//e에 e.getMessage()가 들어온다
 			,error : function(e) {
-				alert("삭제 실패했습니다.");
+				alert("수정 실패했습니다.");
 				console.log(e);
 			}
 		})//ajax end
-		
-	}//contentDetele() end
+
+	}//contentModify() end
 	
 </script>
 
 </head>
 <body>
 
-<!-- 888 -->
 	<div class="container">
 	<br/>
-		<h2>글</h2>
+		<h2>글 수정</h2>
 		<br/>
 		<input type="hidden" id="boardId" value="${content.boardId}">
 		<table class="table table-bordered">
@@ -71,27 +63,21 @@
 				<td>${content.boardId}</td>
 			</tr>
 			<tr>
-				<td>조회수</td>
-				<td>${content.hit}</td>
-			</tr>
-			<tr>
 				<td>이름</td>
 				<td>${content.memberId}</td>
 			</tr>
 			<tr>
 				<td>제목</td>
-					<!-- input type 없을 떄는 기본 text -->				
-				<td><input id="title" value="${content.title}" disabled style="width:100%;"></td>
+				<td><input id="title" value="${content.title}" style="width:100%;"></td>
 			</tr>
 			<tr>
 				<td>내용</td>
-				<td><textarea rows="10" id="text" disabled style="width:100%;">${content.text}</textarea></td>
+				<td><textarea rows="10" id="text" style="width:100%;">${content.text}</textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2">
 					<button type="button" class="btn btn-success" onclick="location.href='/list'">목록보기</button>&nbsp;&nbsp;
-					<button type="button" class="btn btn-warning" onclick="location.href='/contentModifyForm/${content.boardId}'">수정</button>&nbsp;&nbsp;
-					<button type="button" class="btn btn-danger" onclick="contentDetele()">삭제</button><!-- 삭제1 --> 
+					<button type="button" class="btn btn-warning" onclick="contentModify()">저장</button>&nbsp;&nbsp;
 				</td>
 			</tr>
 		</table>

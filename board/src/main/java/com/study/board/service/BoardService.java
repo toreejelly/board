@@ -32,7 +32,8 @@ public interface BoardService {
 	//글 수정
 	//public void contentModify(BoardVO boardVO);
 
+//삭제5	
 	//글 삭제
-	//public void contentDelete(int boardId);
+	public void contentDelete(int boardId);
 
 }

@@ -72,6 +72,14 @@
 			MAX(BOARD_ID) 
 		FROM BOARD
 	</select> 
+
+<!-- 삭제8 -->	
+	<!-- 글 삭제 -->
+	<update id="contentDelete" parameterType="int"> 
+		/* com.study.board.mapper.BoardMapper.contentDelete */
+		DELETE BOARD
+		WHERE BOARD_ID = #{boardId} 	
+	</update> 
 	
 	
 

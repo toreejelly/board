@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -113,6 +114,31 @@ public class BoardController {
          
 		return entity;
     } 
+
+//삭제4    
+    //글 삭제
+    @DeleteMapping("/board/{boardId}")
+    public ResponseEntity<String> contentDelete(@RequestBody BoardVO boardVO) {
+    	log.info("BoardController contentDelete()");
+    	log.info("boardVO : " + boardVO);
+
+		ResponseEntity<String> entity = null;
+		int boardId = boardVO.getBoardId();
+
+		////try catch는 예외 처리를 위해 사용되는 구문이다.
+		try {
+			boardService.contentDelete(boardId);	//글 삭제
+			
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+         
+		return entity;
+
+    }
     
 
 }
