@@ -8,22 +8,23 @@ import com.study.board.vo.BoardVO;
 
 @Mapper
 public interface BoardMapper {
-//7
-	
+
+
+//목록4	
 	//목록조회
 	public List<BoardVO> getList(); 
-//6        자바유틸<리턴값>  함수이름(매개변수.파라미터)	
+//        자바유틸<리턴값>  함수이름(매개변수.파라미터)	
 
-//555
+//조회5
 //수정6	
 	//글 조회
 	public BoardVO getContent(int boardId);
 
-//77	
+//쓰기12	
 	//글 작성 
 	public void contentWrite(BoardVO boardVO);
 
-//1212	
+//쓰기17	
 	//최신 글번호
 	public int boardId();
 

@@ -39,6 +39,7 @@
 			,data : JSON.stringify(data)
 			//entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
 			//result 값에 "SUCCESS"가 들어온다
+			//삭제10
 			,success : function(result) {
 				if (result == "SUCCESS") {
 					alert("삭제되었습니다.");
@@ -59,7 +60,7 @@
 </head>
 <body>
 
-<!-- 888 -->
+<!-- 조회8 -->
 	<div class="container">
 	<br/>
 		<h2>글</h2>

@@ -24,10 +24,11 @@ public class BoardController {
 	@Autowired
 //  다른곳에 것을 사용할 때	
 	private BoardService boardService;
-//2	접근제어자 여기클래스에 접근(대문자로 작성), 변수명(소문자로 작성)BordController에서 이 이름으로 사용하겠다
+//	접근제어자 여기클래스에 접근(대문자로 작성), 변수명(소문자로 작성)BordController에서 이 이름으로 사용하겠다
 //  private : 같은클래스에서만 접근 가능
 //  public 	: 모든클래스에서만 접근 가능	
 
+//목록1	
 	//목록 조회
 	@GetMapping("/list")
 	public String list(Model model) {
@@ -41,17 +42,16 @@ public class BoardController {
 	    //log.info("boardService.getList() : " + boardService.getList());
 	    
 		model.addAttribute("list", boardService.getList());
-//1					        이름(key), 값(value)
+//					        이름(key), 값(value)
 //		  addAttribute(String name, Object value)
 //		  : value 객체를 name 이름으로 추가해줌	 
-		
+
+//목록6		
 		return "list";
     }
 	
+//조회2	
 	//글 조회	
-	//list.jsp 의
-	//111<a href="/board/${list.boardId}">${list.title}</a> 를 타고 왔음
-//222
 	@GetMapping("/board/{boardId}")
 	public String contentViewForm(Model model, BoardVO boardVO) {
 		log.info("BoardController contentViewForm() boardVO");
@@ -64,12 +64,13 @@ public class BoardController {
 //			이 content는 어디서 사용하는거지? contentViewForm.jsp에서 사용		
 		model.addAttribute("content", boardService.getContent(boardId));
 
-//777		
+//조회7		
 		// return값 jsp이름 (contentViewForm.jsp)
 		return "contentViewForm";		
 	}
 	
 
+//쓰기2	
 	//글쓰기 페이지
 	@GetMapping("/contentWriteForm")
 	public String contentWriteForm() {
@@ -78,7 +79,7 @@ public class BoardController {
 		return "contentWriteForm";
 	}
 	
-//44	
+//쓰기8	
     //글쓰기
     @PostMapping("/contentWrite")											 
     public ResponseEntity<String> contentWrite(@RequestBody BoardVO boardVO) {
@@ -91,18 +92,20 @@ public class BoardController {
 		
 		//try catch는 예외 처리를 위해 사용되는 구문입니다.
 		try {
-			//55			
+			//쓰기9			
 			boardService.contentWrite(boardVO);		//글쓰기
 			
-			//9999
+			
 			//alert("작성되었습니다.")를 띄운 후 글작성 내용을 띄우기 위해 필요함
+			//쓰기14
 			int boardId = boardService.boardId();	//최신 글번호
 			String strBoardId = Integer.toString(boardId);
 			log.info("boardId : " + boardId);
 			
 			
-			//success : function(result)로 어케 가는거지?HttpStatus.OK면sucess로 간다
+			//success : function(result)로 어케 가는거지?HttpStatus.OK면success로 간다
 			//strBoardId이 값을 ,success : function(result)의 result가 받는다 
+			//쓰기19
 			entity = new ResponseEntity<String>(strBoardId, HttpStatus.OK);
 			
 		} catch (Exception e) {
@@ -128,8 +131,10 @@ public class BoardController {
 
 		////try catch는 예외 처리를 위해 사용되는 구문이다.
 		try {
+			
 			boardService.contentDelete(boardId);	//글 삭제
 			
+			//삭제9			
 			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
 			
 		} catch (Exception e) {

@@ -13,6 +13,7 @@
 
 <meta charset="UTF-8">
 
+<!-- 목록7  -->
 <title>목록</title>
 
 </head>
@@ -37,6 +38,7 @@
 						<tr>
 							<td>${status.count}</td>  <!-- 1부터의 순서 -->
 							<td>${list.memberId}</td>
+							<!-- 조회1 -->
 							<td><a href="/board/${list.boardId}">${list.title}</a></td>
 	<!--											  -->
 	<!--						a태그 = 글씨눌렀을 때 링크로 이동 href = 링크    -->						
@@ -46,6 +48,7 @@
 					</c:forEach>
 			</tbody>			
 		</table>
+		<!-- 쓰기1  -->
 		<button type="button" class="btn btn-warning" onclick="location.href='/contentWriteForm';">글쓰기</button>
 	
 	</div>

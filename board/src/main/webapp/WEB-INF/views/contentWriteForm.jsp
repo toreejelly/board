@@ -12,8 +12,8 @@
 
 <script>
    
-	//작성
-	//22
+//쓰기5   
+	//작성	
 	function contentWrite() {
 		//# : id / . : class
 		//let, var, const
@@ -35,9 +35,10 @@
 		//						*
 		console.log("data : ", data);
 		
-//33		
+//쓰기6		
 		$.ajax({
 			type : "POST"
+			//쓰기7
 			,url : "/contentWrite"
 			,cache : false
 			//						*
@@ -45,6 +46,7 @@
 			,contentType : 'application/json; charset=utf-8'
 			//entity = new ResponseEntity<String>(strBoardId, HttpStatus.OK);
 			//result에 strBoardId이 들어온다
+			//쓰기20
 			,success : function(result){
 				//console.log("result", result);
 				alert("작성되었습니다.");
@@ -61,6 +63,8 @@
 </script>
 
 </head>
+
+<!-- 쓰기3 -->
 <body>
 
 	<div class="container">
@@ -89,6 +93,7 @@
 			<tr>
 				<td colspan="2">
 					<button type="button" class="btn btn-success" onclick="location.href='/list'">목록보기</button> &nbsp;&nbsp; 
+					<!-- 쓰기4 -->
 					<button type="button" class="btn btn-warning" onclick="contentWrite()">작성</button><!--11 --><!-- &nbsp : space -->
 				</td>
 			</tr>

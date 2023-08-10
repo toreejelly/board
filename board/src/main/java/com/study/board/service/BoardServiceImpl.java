@@ -14,19 +14,20 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired
 	
 	private BoardMapper mapper;	
-	
+
+//목록3	
 	//목록조회
 	@Override
 //	메서드(함수) 선언에만 달 수 있으며, 
 //	상위 타입(부모 타입)의 메서드를 재정의했음을 의미한다.
-	 	
+	
 	public List<BoardVO> getList(){
-//5 접근제어자 자바유틸<리턴값> 함수이름(매개변수.파라미터) 		
+// 접근제어자 자바유틸<리턴값> 함수이름(매개변수.파라미터) 		
  	
 		return mapper.getList();		
 	}
 	
-//444	
+//조회4	
 //수정5	
 	//글 조회
 	@Override
@@ -34,14 +35,14 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.getContent(boardId);
 	}
 
-//66	
+//쓰기11	
 	//글쓰기
 	@Override
 	public void contentWrite(BoardVO boardVO) {
 		mapper.contentWrite(boardVO);
 	}
 
-//1111	
+//쓰기16	
 	//최신 글번호
 	@Override
 	public int boardId() {
