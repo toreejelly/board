@@ -90,8 +90,13 @@
 			<tr>
 				<td colspan="2">
 					<button type="button" class="btn btn-success" onclick="location.href='/list'">목록보기</button>&nbsp;&nbsp;
+					<!-- 수정1 -->
+					<!-- content어디있음?? BoardController @GetMapping("/board/{boardId}")에서 넘어왔음 --> 
+					<!--													페이지로 가는거임?컨트롤러로 가는거임?  -->
+					<!-- 무조건 컨트롤러에 갔다가 페이지를 열 수 있다. 컨트롤러에서 페이지를 열어준다. 																	 -->
 					<button type="button" class="btn btn-warning" onclick="location.href='/contentModifyForm/${content.boardId}'">수정</button>&nbsp;&nbsp;
-					<button type="button" class="btn btn-danger" onclick="contentDetele()">삭제</button><!-- 삭제1 --> 
+					<!-- 삭제1 --> 
+					<button type="button" class="btn btn-danger" onclick="contentDetele()">삭제</button>
 				</td>
 			</tr>
 		</table>

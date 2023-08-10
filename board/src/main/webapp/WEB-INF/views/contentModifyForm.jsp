@@ -11,14 +11,16 @@
 <title>글 수정</title>
 
 <script type="text/javascript">
-   
+
+//수정11   
 	//수정
 	function contentModify(){
-	   
+		//# : id / . : class
 		let boardId = $("#boardId").val(); // 게시판 순번
 		let title = $("#title").val(); // 제목
 		let text = $("#text").val(); // 글          
        
+		//   *
 		var data = {
 			  boardId 	: boardId
 			, title 	: title
@@ -29,10 +31,13 @@
 		
 		$.ajax({
 			type : "PUT"
+//					수정12			
 			,url : "/board/"+boardId
 			,cache : false
 			,contentType : 'application/json; charset=utf-8'
+			//						*
 			,data : JSON.stringify(data)
+//수정14			
 			,success : function(result) {
 				if (result == "SUCCESS") {
 					alert("수정되었습니다.");
@@ -51,11 +56,12 @@
 
 </head>
 <body>
-
+	<!-- 수정9 -->
 	<div class="container">
 	<br/>
 		<h2>글 수정</h2>
 		<br/>
+		<!-- input type 없을 떄는 기본 text -->
 		<input type="hidden" id="boardId" value="${content.boardId}">
 		<table class="table table-bordered">
 			<tr>
@@ -77,6 +83,7 @@
 			<tr>
 				<td colspan="2">
 					<button type="button" class="btn btn-success" onclick="location.href='/list'">목록보기</button>&nbsp;&nbsp;
+					<!-- 수정10 -->
 					<button type="button" class="btn btn-warning" onclick="contentModify()">저장</button>&nbsp;&nbsp;
 				</td>
 			</tr>

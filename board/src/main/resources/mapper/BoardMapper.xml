@@ -21,6 +21,7 @@
 	</select> 
 
 <!-- 666  -->	
+<!-- 수정7 -->
 	<!-- 글 조회 -->
 	<select id="getContent" parameterType="int" resultType="com.study.board.vo.BoardVO"> 
 <!-- paramterType : 전달받은 파라이터 데이터 타입 지정  -->
@@ -80,6 +81,16 @@
 		DELETE BOARD
 		WHERE BOARD_ID = #{boardId} 	
 	</update> 
+	
+<!-- 수정17 -->	
+	<!-- 글 수정 -->
+	<update id="contentModify" parameterType="com.study.board.vo.BoardVO"> 
+		/* com.study.board.mapper.BoardMapper.contentModify */
+		UPDATE BOARD
+		SET   TITLE = #{title}
+			, TEXT = #{text} 
+		WHERE BOARD_ID = #{boardId} 	
+	</update>
 	
 	
 

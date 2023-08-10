@@ -14,7 +14,8 @@ public interface BoardMapper {
 	public List<BoardVO> getList(); 
 //6        자바유틸<리턴값>  함수이름(매개변수.파라미터)	
 
-//555	
+//555
+//수정6	
 	//글 조회
 	public BoardVO getContent(int boardId);
 
@@ -29,5 +30,9 @@ public interface BoardMapper {
 //삭제7	
 	//글 삭제 
 	public void contentDelete(int boardId);
+	
+//수정16
+	//글 수정
+	public void contentModify(BoardVO boardVO);
 	
 }

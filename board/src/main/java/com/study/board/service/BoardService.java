@@ -13,7 +13,8 @@ public interface BoardService {
 //	접근제어자 리턴값         함수
 //			리턴값 없을 경우 void 
 
-//333	
+//333
+//수정4
 	//글 조회
 //							형을 꼭 적어줘야하는가? 무조건 적어줘야함(제네릭<T> 공부)	
 	public BoardVO getContent(int boardId);
@@ -28,9 +29,9 @@ public interface BoardService {
 	//최신 글번호
 	public int boardId();
 	
-
+//수정14
 	//글 수정
-	//public void contentModify(BoardVO boardVO);
+	public void contentModify(BoardVO boardVO);
 
 //삭제5	
 	//글 삭제

@@ -27,6 +27,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 //444	
+//수정5	
 	//글 조회
 	@Override
 	public BoardVO getContent(int boardId) {
@@ -52,5 +53,11 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void contentDelete(int boardId) {
 		mapper.contentDelete(boardId);
+	}
+	
+//수정15
+	@Override
+	public void contentModify(BoardVO boardVO) {
+		mapper.contentModify(boardVO);
 	}
 }

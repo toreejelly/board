@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.study.board.service.BoardService;
@@ -140,6 +141,43 @@ public class BoardController {
 
     }
     
+//수정2    
+  //글 수정 페이지
+    @GetMapping("/contentModifyForm/{boardId}")
+    public String contentModifyForm(Model model, BoardVO boardVO) {
+		log.info("BoardController contentModifyForm() boardVO");
+		log.info("boardVO : " + boardVO);
+	    
+		int boardId = boardVO.getBoardId();
+		log.info("boardId : " + boardId);
+//수정3		
+		model.addAttribute("content", boardService.getContent(boardId));
+//수정8	    
+		return "contentModifyForm";
+    }
+
+//수정13    
+    //글 수정
+    @PutMapping("/board/{boardId}")
+    public ResponseEntity<String> contentModify(@RequestBody BoardVO boardVO) {
+    	log.info("BoardController contentModify()");
+    	log.info("boardVO : " + boardVO);
+
+		ResponseEntity<String> entity = null;
+
+		try {
+			boardService.contentModify(boardVO);
+			
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+         
+		return entity;
+
+    } 
 
 }
 
