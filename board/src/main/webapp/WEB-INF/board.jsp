@@ -146,7 +146,7 @@ function detele() {
 	}
 }
 
-// 상태에 따른 버튼, 폼 설정.
+// 상태에 따른 버튼, 폼 설정
 function layout(상태) {	
 	
 	// 유효성
