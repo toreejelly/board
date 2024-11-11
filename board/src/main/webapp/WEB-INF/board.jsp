@@ -155,7 +155,8 @@ function layout(상태) {
 		return false;		
 	}
 	
-	// 기본
+	// 기본.
+	
 	// 1. 폼 비활성화
 	document.getElementById('userNm').disabled = true;
 	document.getElementById('title').disabled = true;
