@@ -31,7 +31,7 @@ public class BoardService {
 		return mapReturn;
 	}
 	
-	// 게시판 등록.
+	// 게시판 등록..
 	public HashMap<String, Object> insertBoard(HashMap<String, Object> mapParam) {
 		HashMap<String, Object> mapReturn = new HashMap<String, Object>();
 		
