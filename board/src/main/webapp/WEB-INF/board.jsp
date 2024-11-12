@@ -149,7 +149,7 @@ function detele() {
 // 상태에 따른 버튼, 폼 설정.
 function layout(상태) {	
 	
-	// 유효성
+	// 유효성.
 	// 상태 값 있어야 함
 	if (상태 == null || 상태 == '') {
 		return false;		
