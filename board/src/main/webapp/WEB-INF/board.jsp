@@ -146,7 +146,7 @@ function detele() {
 	}
 }
 
-// 상태에 따른 버튼, 폼 설정.
+// 상태에 따른 버튼, 폼 설정
 function layout(상태) {	
 	
 	// 유효성.
@@ -156,7 +156,7 @@ function layout(상태) {
 	}
 	
 	// 기본.
-	
+
 	// 1. 폼 비활성화
 	document.getElementById('userNm').disabled = true;
 	document.getElementById('title').disabled = true;
