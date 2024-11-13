@@ -150,7 +150,7 @@ function detele() {
 function layout(상태) {	
 	
 	// 유효성.
-	// 상태 값 있어야 함
+	// 상태 값 있어야 함.
 	if (상태 == null || 상태 == '') {
 		return false;		
 	}
