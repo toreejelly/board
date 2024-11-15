@@ -162,7 +162,7 @@ function layout(상태) {
 	document.getElementById('title').disabled = true;
 	document.getElementById('content').disabled = true;
 	
-	// 2. 버튼 숨기기
+	// 2. 버튼 숨기기.
 	//$('#listBtn').hide();
 	$('#modifyBtn').hide();
 	$('#deleteBtn').hide();
