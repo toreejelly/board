@@ -170,7 +170,7 @@ function layout(상태) {
 	$('#cancleBtn').hide();
 	
 	// 개별
-	// 상태에 따른 설정.
+	// 상태에 따른 설정
 	if (상태 == '작성') {
 		// 값 초기화
 		$('#userNm').val('');
