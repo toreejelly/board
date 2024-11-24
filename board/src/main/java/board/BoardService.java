@@ -20,7 +20,7 @@ public class BoardService {
 		HashMap<String, Object> mapReturn = new HashMap<String, Object>();
 		
 		try {
-			mapReturn.put("result", "성공");
+			mapReturn.put("result", "성공.");
 			mapReturn.put("list", boardMapper.selectBoardList(mapParam)); // 게시판 조회
 			
 		} catch (Exception e) {
