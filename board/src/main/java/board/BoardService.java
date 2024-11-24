@@ -24,7 +24,7 @@ public class BoardService {
 			mapReturn.put("list", boardMapper.selectBoardList(mapParam)); // 게시판 조회
 			
 		} catch (Exception e) {
-			mapReturn.put("result", "실패");
+			mapReturn.put("result", "실패.");
 			log.info(e);
 		}
 		
