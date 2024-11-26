@@ -21,7 +21,7 @@ public class BoardService {
 		
 		try {
 			mapReturn.put("result", "성공");
-			mapReturn.put("list", boardMapper.selectBoardList(mapParam)); // 게시판 조회.
+			mapReturn.put("list", boardMapper.selectBoardList(mapParam)); // 게시판 조회
 			
 		} catch (Exception e) {
 			mapReturn.put("result", "실패");
