@@ -15,7 +15,7 @@ public class BoardService {
 	@Autowired
 	private BoardMapper boardMapper;
 	
-	// 게시판 조회.
+	// 게시판 조회
 	public HashMap<String, Object> selectBoardList(HashMap<String, Object> mapParam) {
 		HashMap<String, Object> mapReturn = new HashMap<String, Object>();
 		
