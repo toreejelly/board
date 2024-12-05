@@ -43,7 +43,7 @@
 		)
 	</insert>
 	
-	<!-- 게시판 수정 -->
+	<!-- 게시판 수정 .-->
 	<update id="updateBoard" parameterType="java.util.HashMap">
 		UPDATE BOARD_NEW
 		<trim prefix="SET" prefixOverrides=",">
