@@ -16,6 +16,7 @@ if (${boardSeq} != null && ${boardSeq} != '') {
 }
 
 // 화면 초기화
+//onclick="init()">취소
 $(document).ready(function() {
 	init(); // 초기화
 });
