@@ -33,6 +33,7 @@ public class BoardService {
 	
 	// 게시판 등록.
 	public HashMap<String, Object> insertBoard(HashMap<String, Object> mapParam) {
+		//이렇게 하는 이유?
 		HashMap<String, Object> mapReturn = new HashMap<String, Object>();
 		
 		try {

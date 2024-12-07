@@ -37,7 +37,7 @@ public class BoardController {
 		// 게시판 조회
 		return boardsevice.selectBoardList(mapParam);
 	}
-	
+	 
 	@PostMapping("/insertBoard")
 	public @ResponseBody HashMap<String, Object> insertBoard (@RequestBody HashMap<String, Object> mapParam) {
 		// 게시판 등록
