@@ -37,6 +37,7 @@ public class BoardService {
 		HashMap<String, Object> mapReturn = new HashMap<String, Object>();
 		
 		try {
+			//이게 insertmapper을 호출하게 한다
 			if (boardMapper.insertBoard(mapParam) > 0) {
 				mapReturn.put("result", "성공");
 				mapReturn.put("boardSeq", boardMapper.getMaxBoardSeq()); // 등록된 게시판 순번 가져오기
