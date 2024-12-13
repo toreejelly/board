@@ -120,7 +120,7 @@ function save() {
 }
 
 //게시판 삭제
-function detele() {
+function delete() {
 	
 	if(confirm('삭제하겠습니까?')) {
 		$.ajax({
@@ -233,7 +233,7 @@ function layout(상태) {
 				<td colspan="2" style="text-align: right;">
 					<button type="button" class="btn btn-success" onclick="location.href='/'">목록보기</button>
 					<button id="modifyBtn" type="button" class="btn btn-warning" onclick="layout('수정')">수정</button>
-					<button id="deleteBtn" type="button" class="btn btn-danger" onclick="detele()">삭제</button>
+					<button id="deleteBtn" type="button" class="btn btn-danger" onclick="delete()">삭제</button>
 					<button id="saveBtn" type="button" class="btn btn-danger" onclick="save()">저장</button>
 					<button id="cancleBtn" type="button" class="btn btn-warning" onclick="init()">취소</button>
 				</td>
