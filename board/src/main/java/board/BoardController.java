@@ -35,7 +35,7 @@ public class BoardController {
 	
 	@PostMapping("/selectBoardList")
 	public @ResponseBody HashMap<String, Object> selectBoradList (@RequestBody HashMap<String, Object> mapParam) {
-		// 게시판 조회
+		// 게시판 조회.
 		return boardsevice.selectBoardList(mapParam);
 	}
 	 
