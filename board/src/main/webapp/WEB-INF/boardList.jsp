@@ -74,7 +74,7 @@ function board(boardSeq) {
 	
 	console.log(boardSeq);
 	
-	// 폼 형태로 post 로 이동
+	// 폼 형태로 post 로 이동.
 	let form = document.createElement('form');
     form.method = 'POST';
     form.action = '/board';
